@@ -1,18 +1,14 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var senateRouter = require('./routes/senate');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+app.use('/senate', senateRouter);
 
-app.post('/senate', function (req, res) {
-    var data = req.body;
-    console.log('post worked',data);
-    res.sendStatus(201);
-
-});
 
 
 app.listen(5000, function () {

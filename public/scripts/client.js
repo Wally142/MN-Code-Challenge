@@ -5,7 +5,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
     console.log('myApp -- config')
     $routeProvider
         .when('/', {
-            templateUrl: '/views/senate.html',
+            templateUrl: '/views/home.html',
             controller: 'SenateController as sc',
         })
         .when('/form', {
