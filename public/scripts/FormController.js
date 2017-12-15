@@ -8,7 +8,8 @@ myApp.controller('FormController', function (SenateService, $location) {
             phone: vm.phoneIn,
             address: vm.addressIn,
             email: vm.emailIn,
-            comment: vm.commentIn
+            comment: vm.commentIn,
+            real: vm.humanIn
         }
 
         SenateService.info(data);
@@ -17,5 +18,6 @@ myApp.controller('FormController', function (SenateService, $location) {
         vm.addressIn = null;
         vm.emailIn = null;
         vm.commentIn = null;
+        vm.humanIn = null;
     }//end info function
 });// end controller
