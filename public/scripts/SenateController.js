@@ -9,4 +9,10 @@ myApp.controller('SenateController', function (SenateService, $location) {
         SenateService.senators();
     };
 
-});
+    vm.senatorForm = function (id1, id2) {
+        console.log('id1:', id1, 'id2:', id2);
+
+        $location.path('/form');
+    }
+
+});//end controller

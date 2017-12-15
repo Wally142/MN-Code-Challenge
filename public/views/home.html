@@ -3,14 +3,14 @@
 <div ng-init="sc.getSenators()">
 <select class="search" ng-model="sc.senator" selected="clear">
     <option value="">Select Senator</option>
-    <option value="senatorName">{{sc.senator.name}}</option>
+    <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.name}}</option>
 </select>
 
 <select class="search" ng-model="sc.district" selected="clear">
     <option value="">Select District</option>
-    <option value="districtNum">{{sc.senator.district}}</option>
+    <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.district}}</option>
 </select>
 </div>
 
 
-<button><a href='/form'>Form View</a></button>
+<button ng-click="sc.senatorForm(sc.senator, sc.district)">Next</button>
