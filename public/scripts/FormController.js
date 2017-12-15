@@ -8,7 +8,7 @@ myApp.controller('FormController', function (SenateService, $location) {
             phone: vm.phoneIn,
             address: vm.addressIn,
             email: vm.emailIn,
-            comment: vm.commentIn,
+            comments: vm.commentIn,
             real: vm.humanIn
         }
 

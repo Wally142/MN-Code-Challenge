@@ -2,7 +2,7 @@ myApp.service('SenateService', function ($http, $location) {
     console.log('SenateService Loaded');
 
     var self = this;
-    self.mnSenate = {list: []};
+    self.mnSenate = { list: [] };
 
     self.senators = function () {
         console.log('senators and their districts')
@@ -13,14 +13,7 @@ myApp.service('SenateService', function ($http, $location) {
             console.log(response);
             self.mnSenate.list = response.data;
         });
-    };//end get call
-
-
-
-
-
-
-
+    };
 
     self.info = function (data) {
         console.log('Post form');
