@@ -1,12 +1,12 @@
-<h2>Your Information</h2>
+<h2>{{sc.SenateService.person}}</h2>
 <div>
-    <input type="text" placeholder="Name" ng-model="fc.nameIn">
-    <input type="text" placeholder="Phone Number" ng-model="fc.phoneIn">
-    <input type="text" placeholder="Address" ng-model="fc.addressIn">
-    <input type="text" placeholder="Email Address" ng-model="fc.emailIn">
-    <input type="text" placeholder="Comments" ng-model="fc.commentIn">
-    <input type="checkbox" ng-model="fc.humanIn" ng-required="fc.humanIn">
+    <input type="text" placeholder="Name" ng-model="sc.nameIn">
+    <input type="text" placeholder="Phone Number" ng-model="sc.phoneIn">
+    <input type="text" placeholder="Address" ng-model="sc.addressIn">
+    <input type="text" placeholder="Email Address" ng-model="sc.emailIn">
+    <input type="text" placeholder="Comments" ng-model="sc.commentIn">
+    <input type="checkbox" ng-model="sc.humanIn" ng-required="sc.humanIn">
     <div ng-message="required">Check here before proceeding</div>
-    <button ng-click="fc.info()">Submit</button>
+    <button ng-click="sc.info()">Submit</button>
 </div>
-<buton><a href="/senate">Back</a></buton>
+<buton><a href="/">Back</a></buton>

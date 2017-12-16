@@ -3,6 +3,8 @@ myApp.service('SenateService', function ($http, $location) {
 
     var self = this;
     self.mnSenate = { list: [] };
+    self.person = {};
+    self.districts = {};
 
     self.senators = function () {
         console.log('senators and their districts')
@@ -10,7 +12,7 @@ myApp.service('SenateService', function ($http, $location) {
             method: 'GET',
             url: '/senate'
         }).then(function (response) {
-            console.log(response);
+            console.log('senators');
             self.mnSenate.list = response.data;
         });
     };
@@ -22,7 +24,20 @@ myApp.service('SenateService', function ($http, $location) {
             url: '/senate',
             data: data
         }).then(function (response) {
-            console.log('citizen request posted', response);
+            console.log('citizen request posted');
         })
-    }//end post call
+    }
+
+    self.showSenator = function (id) {
+        console.log('showing correct senator name', id);
+        thisId = id;
+        $http({
+            method: 'GET',
+            url: '/senate/form/' + thisId
+        }).then(function (response) {
+            console.log('response', response.data);
+        });
+    };
+
 });//end service
+

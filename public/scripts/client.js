@@ -10,9 +10,9 @@ myApp.config(function ($routeProvider, $locationProvider) {
         })
         .when('/form', {
             templateUrl: '/views/form.html',
-            controller: 'FormController as fc'
+            controller: 'SenateController as sc'
         }).otherwise({
             redirectTo: '/'
         });
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 });
