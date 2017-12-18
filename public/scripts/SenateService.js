@@ -3,8 +3,6 @@ myApp.service('SenateService', function ($http, $location) {
 
     var self = this;
     self.mnSenate = { list: [] };
-    self.person = {};
-    self.districts = {};
 
     self.senators = function () {
         console.log('senators and their districts')
@@ -24,7 +22,7 @@ myApp.service('SenateService', function ($http, $location) {
             url: '/senate',
             data: data
         }).then(function (response) {
-            console.log('citizen request posted');
+            console.log('citizen request posted', response);
         })
     }
 });//end service

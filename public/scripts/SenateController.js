@@ -16,7 +16,7 @@ myApp.controller('SenateController', function (SenateService, $location) {
             senator_id: vm.senator,
             district_id: vm.district
         }
-        console.log(vm.senator, 'senator id')
+        console.log(vm.district, 'senator id')
         SenateService.info(data);
         vm.nameIn = null;
         vm.phoneIn = null;
