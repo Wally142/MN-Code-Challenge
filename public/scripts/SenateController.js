@@ -24,6 +24,8 @@ myApp.controller('SenateController', function (SenateService, $location) {
         vm.emailIn = null;
         vm.commentIn = null;
         vm.humanIn = null;
+        vm.senator = null;
+        vm.district = null;
     }
 
     vm.getSenators = function () {

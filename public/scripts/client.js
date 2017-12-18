@@ -7,12 +7,8 @@ myApp.config(function ($routeProvider, $locationProvider) {
         .when('/', {
             templateUrl: '/views/home.html',
             controller: 'SenateController as sc',
-        })
-        .when('/form', {
-            templateUrl: '/views/form.html',
-            controller: 'SenateController as sc'
         }).otherwise({
             redirectTo: '/'
         });
-    // $locationProvider.html5Mode(true);
+    
 });

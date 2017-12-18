@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pool = require('../data-model/pool.js');
+var nodemailer = require('nodemailer');
 
 router.get('/', function (req, res) {
   pool.connect(function (error, client, done) {
@@ -37,12 +38,14 @@ router.post('/', function (req, res) {
           console.log(queryErr)
           res.sendStatus(500);
         } else {
-
           res.sendStatus(201);
         }
-      });
+      })
     }
   });
 });// end post
 
 module.exports = router;
+
+
+
