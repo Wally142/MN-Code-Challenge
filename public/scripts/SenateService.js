@@ -27,17 +27,5 @@ myApp.service('SenateService', function ($http, $location) {
             console.log('citizen request posted');
         })
     }
-
-    self.showSenator = function (id) {
-        console.log('showing correct senator name', id);
-        thisId = id;
-        $http({
-            method: 'GET',
-            url: '/senate/form/' + thisId
-        }).then(function (response) {
-            console.log('response', response.data);
-        });
-    };
-
 });//end service
 

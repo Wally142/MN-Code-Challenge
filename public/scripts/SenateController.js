@@ -12,9 +12,11 @@ myApp.controller('SenateController', function (SenateService, $location) {
             address: vm.addressIn,
             email: vm.emailIn,
             comments: vm.commentIn,
-            real: vm.humanIn
+            real: vm.humanIn,
+            senator_id: vm.senator,
+            district_id: vm.district
         }
-
+        console.log(vm.senator, 'senator id')
         SenateService.info(data);
         vm.nameIn = null;
         vm.phoneIn = null;
@@ -27,13 +29,4 @@ myApp.controller('SenateController', function (SenateService, $location) {
     vm.getSenators = function () {
         SenateService.senators();
     };
-
-    vm.senatorForm = function (id, senator) {
-        console.log('name:',id, senator);
-        SenateService.person = senator;
-        // SenateService.districts = senator;
-        SenateService.showSenator(id);
-        $location.path('/form');
-    }
-
 });//end controller
