@@ -22,7 +22,7 @@ myApp.service('SenateService', function ($http, $location) {
             url: '/senate',
             data: data
         }).then(function (response) {
-            console.log('citizen request posted', response);
+            console.log('citizen request posted')
         })
     }
 });//end service

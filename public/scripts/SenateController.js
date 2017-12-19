@@ -1,6 +1,5 @@
 myApp.controller('SenateController', function (SenateService, $location) {
-    console.log('SenateController created');
-
+    
     var vm = this;
     vm.SenateService = SenateService;
     vm.mnSenate = SenateService.mnSenate;
@@ -16,7 +15,7 @@ myApp.controller('SenateController', function (SenateService, $location) {
             senator_id: vm.senator,
             district_id: vm.district
         }
-        console.log(vm.district, 'senator id')
+        
         SenateService.info(data);
         vm.nameIn = null;
         vm.phoneIn = null;
@@ -31,4 +30,6 @@ myApp.controller('SenateController', function (SenateService, $location) {
     vm.getSenators = function () {
         SenateService.senators();
     };
+
+    
 });//end controller

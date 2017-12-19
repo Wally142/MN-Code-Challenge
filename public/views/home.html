@@ -1,24 +1,33 @@
-<h1>Choose a Senator or District</h1>
+<h1>Please either a Senator or a District</h1>
 
 <div ng-init="sc.getSenators()">
-<select class="search" ng-model="sc.senator" selected="clear">
-    <option value="">Select Senator</option>
-    <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.name}}</option>
-</select>
-
-<select class="search" ng-model="sc.district" selected="clear">
-    <option value="">Select District</option>
-    <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.district}}</option>
-</select>
-
-    <input type="text" placeholder="Name" ng-model="sc.nameIn">
-    <input type="text" placeholder="Phone Number" ng-model="sc.phoneIn">
-    <input type="text" placeholder="Address" ng-model="sc.addressIn">
-    <input type="text" placeholder="Email Address" ng-model="sc.emailIn">
-    <input type="text" placeholder="Comments" ng-model="sc.commentIn">
-    <input type="checkbox" ng-model="sc.humanIn" ng-required="sc.humanIn">
-    <div ng-message="required">Check here before proceeding</div>
-    <button ng-click="sc.info()">Submit</button>
+    <select class="search" ng-model="sc.senator" selected="clear">
+        <option value="">Select Senator</option>
+        <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.name}}</option>
+    </select>
+    <p>OR</p>
+    <select class="search" ng-model="sc.district" selected="clear">
+        <option value="">Select District</option>
+        <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.district}}</option>
+    </select>
+    <div>
+        <input type="text" placeholder="Name" ng-model="sc.nameIn">
+    </div>
+    <div>
+        <input type="text" placeholder="Phone Number" ng-model="sc.phoneIn">
+    </div>
+    <div>
+        <input type="text" placeholder="Address" ng-model="sc.addressIn">
+    </div>
+    <div>
+        <input type="text" placeholder="Email Address" ng-model="sc.emailIn">
+    </div>
+    <div>
+        <input type="text" placeholder="Comments" ng-model="sc.commentIn">
+    </div>
+    <div>
+        Check to confirm you are not a bot
+        <input type="checkbox" id="check" ng-model="sc.humanIn" required>
+    </div>
+    <input type="submit" ng-click="sc.info()">
 </div>
-
-
