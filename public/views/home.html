@@ -1,50 +1,50 @@
-<h1>Please either a Senator or a District</h1>
-
-<form name="senateForm" ng-submit="sc.info(sc.SenateService.mnSenate.list[0].email)">
-    <!-- ng-submit sends the data to the database and to the senator's email -->
-    <div ng-init="sc.getSenators()">
-        <!-- sc.getSenators Function gets the senator data from databse to display in dropdown menus -->
-        <select class="search" ng-model="sc.senator" selected="clear">
-            <option value="">Select Senator</option>
-            <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.name}}</option>
-            <!-- ng-repeat loops through senator array, value of senator.id links intake data to the right senator -->
-        </select>
-        <p>OR</p>
-        <select class="search" ng-model="sc.district" selected="clear">
-            <option value="">Select District</option>
-            <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.district}}</option>
-        </select>
-        <div></div>
-        <br>
-        <div>
-            <input type="text" placeholder="Name" ng-model="sc.nameIn">
-            <!-- ng-model is the input data being sent -->
-        </div>
-        <br>
-        <div>
-            <input type="text" placeholder="Phone Number" ng-model="sc.phoneIn">
-        </div>
-        <br>
-        <div>
-            <input type="text" placeholder="Address" ng-model="sc.addressIn">
-        </div>
-        <br>
-        <div>
-            <input type="text" placeholder="Email Address" ng-model="sc.emailIn">
-        </div>
-        <br>
-        <div>
-            <input type="text" placeholder="Comments" ng-model="sc.commentIn">
-        </div>
-        <br>
-        <div>
-            Check to confirm you are not a bot
-            <input type="checkbox" name="check" ng-model="sc.humanIn" ng-required="true">
-            <div ng-messages="senateForm.check.$error" role="alert">
-               <!-- ng-message/ng-submit from form tag making it so person cannot submit form without clicking the checkbox --> 
+<h1>Please Select a Senator or a District</h1>
+    
+    <form class="form pic" name="senateForm" ng-submit="sc.info(sc.SenateService.mnSenate.list[0].email)">
+        <!-- ng-submit sends the data to the database and to the senator's email -->
+        <div ng-init="sc.getSenators()">
+            <!-- sc.getSenators Function gets the senator data from databse to display in dropdown menus -->
+            <select class="search" ng-model="sc.senator" selected="clear">
+                <option value="">Select Senator</option>
+                <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.name}}</option>
+                <!-- ng-repeat loops through senator array, value of senator.id links intake data to the right senator -->
+            </select>
+            <p>OR</p>
+            <select class="search" ng-model="sc.district" selected="clear">
+                <option value="">Select District</option>
+                <option ng-repeat="senator in sc.mnSenate.list" value="{{senator.id}}">{{senator.district}}</option>
+            </select>
+            <div></div>
+            <br>
+            <div>
+                <input type="text" class="intake" placeholder="Name" ng-model="sc.nameIn">
+                <!-- ng-model is the input data being sent -->
             </div>
             <br>
-            <button type="submit">Submit</button>
+            <div>
+                <input type="text" class="intake" placeholder="Phone Number" ng-model="sc.phoneIn">
+            </div>
+            <br>
+            <div>
+                <input type="text" class="intake" placeholder="Address" ng-model="sc.addressIn">
+            </div>
+            <br>
+            <div>
+                <input type="text" class="intake" placeholder="Email Address" ng-model="sc.emailIn">
+            </div>
+            <br>
+            <div>
+                <textarea type="text" id="intake1" placeholder="Message For Your Senator" ng-model="sc.commentIn">Message For Senator</textarea>
+            </div>
+            <br>
+            <div>
+                Check to confirm you are not a bot
+                <input type="checkbox" name="check" ng-model="sc.humanIn" ng-required="true">
+                <div ng-messages="senateForm.check.$error" role="alert">
+                    <!-- ng-message/ng-submit from form tag making it so person cannot submit form without clicking the checkbox -->
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
         </div>
-        </div>
-</form>
+    </form>

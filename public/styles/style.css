@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+.intake {
+   height: 20px;
+   width: 250px; 
+}
+
+#intake1 {
+    height: 50px;
+    width: 250px;
+}
+
+.search {
+    height: 30px;
+    width: 250px;
+}
+
+.form {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.pic {
+    background-image: url("http://minnesotaflag.facts.co/minnesotastateflagof/MinnesotaFlag.png");
+    background-repeat: no-repeat;
+    background-size: 30%;
+    position: relative;
+    top: 50px;
+    
+}
