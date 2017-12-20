@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute']);//source in angular
 
 myApp.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
@@ -6,9 +6,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/views/home.html',
-            controller: 'SenateController as sc',
+            controller: 'SenateController as sc',//sc makes using controller functions easier in html
         }).otherwise({
             redirectTo: '/'
         });
     
 });
+
+//file to source in angular App and allow for separate html pages or to add multiple views if desired

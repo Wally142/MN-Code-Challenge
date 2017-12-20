@@ -1,10 +1,11 @@
+//required node modules for database communication to be executed as well as node mailer
 var express = require('express');
 var router = express.Router();
 var pool = require('../data-model/pool.js');
 var nodemailer = require('nodemailer');
 require('dotenv').config();
 
-router.get('/', function (req, res) {
+router.get('/', function (req, res) {// querty to get senator information from database
   pool.connect(function (error, client, done) {
     if (error) {
       console.log(error);
@@ -21,11 +22,11 @@ router.get('/', function (req, res) {
       });
     }
   });
-}); //end get
+}); //end get Senators
 
-router.post('/', function (req, res) {
+router.post('/', function (req, res) {//query to post into database and initiates nodemailer
   console.log('in router post');
-  var input = req.body;
+  var input = req.body;//variable holding data from form
   pool.connect(function (error, client, done) {
     if (error) {
       console.log(error);
@@ -42,16 +43,16 @@ router.post('/', function (req, res) {
           var transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-              user: 'mnsenate.mailer@gmail.com',
+              user: 'mnsenate.mailer@gmail.com',//example email for sender
               pass: process.env.MAILERPASSWORD
             }
           })
           var mailOptions = {
             from: 'mnsenate.mailer@gmail.com',
-            to: 'gwallerus@gmail.com',
-            subject: 'NodeMailer set up',
-            html: '<p>YGood Work Greg</p>' +
-              '<p>Keep at it!</p>'
+            to: input.senator_email,//sends to correct senator's email
+            subject: 'Constituent message received',
+            html: '<p>Message From</p>' + input.name +'<p>That says</p>' + input.comments +'<p>Thank you Senator, you can contact me at</p>' + input.phone +'<p>or</p>' + input.email
+              
           };
           transporter.sendMail(mailOptions, function (err, info) {
             if (err) {
